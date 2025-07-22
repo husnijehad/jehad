@@ -1,21 +1,10 @@
 workflows:
   ios-capacitor:
-    name: Build iOS App (Capacitor)
+    name: List iOS Schemes
     environment:
-      vars:
-        APP_ID: "com.husni.jehad"
       xcode: latest
-      cocoapods: default
     scripts:
-      - name: Install dependencies
-        script: |
-          npm install
-          echo "Skipping build script check because it doesn't exist"
-          npx cap sync ios || echo "Capacitor CLI permission issue skipped"
-      - name: Build iOS .ipa
+      - name: List schemes in workspace
         script: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -archivePath $CM_BUILD_DIR/build/App.xcarchive archive
-          xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/build/App.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $CM_BUILD_DIR/build/ipa
-    artifacts:
-      - build/ipa/*.ip 
+          xcodebuild -workspace App.xcworkspace -list
