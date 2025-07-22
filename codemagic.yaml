@@ -1,0 +1,21 @@
+workflows:
+  ios-capacitor:
+    name: Build iOS App (Capacitor)
+    environment:
+      vars:
+        APP_ID: "com.husni.jehad"
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install dependencies
+        script: |
+          npm install
+          npm run build || echo "No build script"
+          npx cap sync ios
+      - name: Build iOS .ipa
+        script: |
+          cd ios/App
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -archivePath $CM_BUILD_DIR/build/App.xcarchive archive
+          xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/build/App.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $CM_BUILD_DIR/build/ipa
+    artifacts:
+      - build/ipa/*.ipa
