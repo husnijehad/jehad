@@ -6,8 +6,12 @@
   <key>method</key>
   <string>development</string>
   <key>signingStyle</key>
-  <string>manual</string>
+  <string>automatic</string>
+  <key>stripSwiftSymbols</key>
+  <true/>
   <key>compileBitcode</key>
   <false/>
+  <key>destination</key>
+  <string>export</string>
 </dict>
 </plist>
