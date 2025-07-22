@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Learning App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'kid-blue': '#4FC3F7',
+                        'kid-green': '#66BB6A',
+                        'kid-orange': '#FF9800',
+                        'kid-pink': '#E91E63',
+                        'kid-purple': '#9C27B0',
+                        'kid-yellow': '#FFEB3B'
+                    },
+                    animation: {
+                        'bounce-gentle': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500">
+    <div id="introPage" class="fixed inset-0 z-50">
+        <video id="introVideo" class="absolute inset-0 w-full h-full object-cover" 
+               muted playsinline autoplay>
+            <source src="https://firebasestorage.googleapis.com/v0/b/school-29df1.firebasestorage.app/o/Generated%20File%20July%2016%2C%202025%20-%2012_06AM.mp4?alt=media&token=943494e3-eb95-4294-bd63-6dd0b7670b1b" type="video/mp4">
+        </video>
+    </div>
+    
+    <div id="mainPage" class="page-transition hidden">
+        <div class="text-center py-8 px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-white animate-bounce-gentle">
+                Kiddy Mind Plus
+            </h1>
+            <p class="text-xl text-gray-300 dark:text-gray-300 mt-4 font-medium">
+                Choose a topic to learn and have fun!
+            </p>
+        </div>
+        
+        <div class="container mx-auto px-3 sm:px-4 pb-6 sm:pb-8">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-7xl mx-auto">
+                <!-- Greeting Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/9956fda9387543ce6ed33aeaf7c5ea6521721b7cc8fdd5cf056844f02843252d?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(1, 'Greeting', '👋')">
+                        <div class="flashes">
+                            <div class="flash flash-1"></div>
+                            <div class="flash flash-2"></div>
+                            <div class="flash flash-3"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Greeting</h3>
+                    </div>
+                </div>
+                
+                <!-- Numbers Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/13052ed1beb5d01057ef4d37476d7be41d9c8e9e0915e06d73334fbb4ae257e4?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(2, 'Numbers', '🔢')">
+                        <div class="butterflies">
+                            <div class="butterfly butterfly-1"></div>
+                            <div class="butterfly butterfly-2"></div>
+                            <div class="butterfly butterfly-3"></div>
+                            <div class="butterfly butterfly-4"></div>
+                            <div class="butterfly butterfly-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Numbers</h3>
+                    </div>
+                </div>
+                
+                <!-- Colors Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/b493b91837bc431f6f33986549964c804756ce59bcabd9b92e970f617e438c21?w=1024&h=1536'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(3, 'Colors', '🎨')">
+                        <div class="floating-colors">
+                            <div class="color-dot color-red"></div>
+                            <div class="color-dot color-blue"></div>
+                            <div class="color-dot color-green"></div>
+                            <div class="color-dot color-yellow"></div>
+                            <div class="color-dot color-purple"></div>
+                            <div class="color-dot color-orange"></div>
+                            <div class="color-dot color-pink"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Colors</h3>
+                    </div>
+                </div>
+                
+                <!-- Wild Animals Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/362c8c9bad3135e5e6da2b919c12c676cf8355e27700b6856b05a5b77b67787e?w=1320&h=1320'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(4, 'Wild Animals', '🦁')">
+                        <div class="wild-falling-stars">
+                            <div class="wild-star wild-star-1"></div>
+                            <div class="wild-star wild-star-2"></div>
+                            <div class="wild-star wild-star-3"></div>
+                            <div class="wild-star wild-star-4"></div>
+                            <div class="wild-star wild-star-5"></div>
+                            <div class="wild-star wild-star-6"></div>
+                            <div class="wild-star wild-star-7"></div>
+                            <div class="wild-star wild-star-8"></div>
+                            <div class="wild-star wild-star-9"></div>
+                            <div class="wild-star wild-star-10"></div>
+                        </div>
+                        <div class="wild-sun-effects">
+                            <div class="wild-sun-ray wild-sun-ray-1"></div>
+                            <div class="wild-sun-ray wild-sun-ray-2"></div>
+                            <div class="wild-sun-ray wild-sun-ray-3"></div>
+                            <div class="wild-sun-ray wild-sun-ray-4"></div>
+                            <div class="wild-sun-ray wild-sun-ray-5"></div>
+                            <div class="wild-sun-ray wild-sun-ray-6"></div>
+                            <div class="wild-sun-ray wild-sun-ray-7"></div>
+                            <div class="wild-sun-ray wild-sun-ray-8"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Wild Animals</h3>
+                    </div>
+                </div>
+                
+                <!-- Farm Animals Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/6f1d6fdd95c4b9c530e0e6210d00919eba8f78fb06d9095aaaa9d42f87997d9a?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(5, 'Farm Animals', '🐄')">
+                        <div class="wind-effects">
+                            <div class="wind-line wind-line-1"></div>
+                            <div class="wind-line wind-line-2"></div>
+                            <div class="wind-line wind-line-3"></div>
+                            <div class="wind-line wind-line-4"></div>
+                            <div class="wind-line wind-line-5"></div>
+                            <div class="wind-line wind-line-6"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Farm Animals</h3>
+                    </div>
+                </div>
+                
+                <!-- Sea Animals Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/93f1ba5f8794f59c4ca9fc29e62c9cbfaeb4cb4f75c43f1e9c5713a8758b6232?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(6, 'Sea Animals', '🐋')">
+                        <div class="bubble bubble-1"></div>
+                        <div class="bubble bubble-2"></div>
+                        <div class="bubble bubble-3"></div>
+                        <div class="bubble bubble-4"></div>
+                        <div class="bubble bubble-5"></div>
+                        <div class="bubble bubble-6"></div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Sea Animals</h3>
+                    </div>
+                </div>
+                
+                <!-- Weather Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/c4a9dcfb948442cc2c60ee447ecf87d1bb834da781eb060aa0a38aba1f490d16?w=1024&h=861'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(7, 'Weather', '☀️')">
+                        <div class="rain-effects">
+                            <div class="rain-drop rain-drop-1"></div>
+                            <div class="rain-drop rain-drop-2"></div>
+                            <div class="rain-drop rain-drop-3"></div>
+                            <div class="rain-drop rain-drop-4"></div>
+                            <div class="rain-drop rain-drop-5"></div>
+                            <div class="rain-drop rain-drop-6"></div>
+                            <div class="rain-drop rain-drop-7"></div>
+                            <div class="rain-drop rain-drop-8"></div>
+                            <div class="rain-drop rain-drop-9"></div>
+                            <div class="rain-drop rain-drop-10"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Weather</h3>
+                    </div>
+                </div>
+                
+                <!-- Shapes Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/5eaf2004fd953bdd532e09c23dd5ad304fc57e3ba4272a117ff66a4e4a4fc944?w=1320&h=1332'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(8, 'Shapes', '⭐')">
+                        <div class="shapes-effects">
+                            <div class="shape-square square-1"></div>
+                            <div class="shape-square square-2"></div>
+                            <div class="shape-square square-3"></div>
+                            <div class="shape-square square-4"></div>
+                            <div class="shape-square square-5"></div>
+                            <div class="shape-triangle triangle-1"></div>
+                            <div class="shape-triangle triangle-2"></div>
+                            <div class="shape-triangle triangle-3"></div>
+                            <div class="shape-triangle triangle-4"></div>
+                            <div class="shape-triangle triangle-5"></div>
+                            <div class="shape-triangle triangle-6"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Shapes</h3>
+                    </div>
+                </div>
+                
+                <!-- Fruits Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/0681cd328339182d132a134dd17d3cd0cc046efab2fd7f73cf3766ebbf5ee00d?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(9, 'Fruits', '🍎')">
+                        <div class="fruits-falling-stars">
+                            <div class="fruits-star fruits-star-1"></div>
+                            <div class="fruits-star fruits-star-2"></div>
+                            <div class="fruits-star fruits-star-3"></div>
+                            <div class="fruits-star fruits-star-4"></div>
+                            <div class="fruits-star fruits-star-5"></div>
+                            <div class="fruits-star fruits-star-6"></div>
+                            <div class="fruits-star fruits-star-7"></div>
+                            <div class="fruits-star fruits-star-8"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Fruits</h3>
+                    </div>
+                </div>
+                
+                <!-- Vegetables Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/be26c25f89bfdc7160209ee112c7f972ca811a107153729879823ab4b1f1467c?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(10, 'Vegetables', '🥕')">
+                        <div class="vegetables-falling-stars">
+                            <div class="vegetables-star vegetables-star-1"></div>
+                            <div class="vegetables-star vegetables-star-2"></div>
+                            <div class="vegetables-star vegetables-star-3"></div>
+                            <div class="vegetables-star vegetables-star-4"></div>
+                            <div class="vegetables-star vegetables-star-5"></div>
+                            <div class="vegetables-star vegetables-star-6"></div>
+                            <div class="vegetables-star vegetables-star-7"></div>
+                            <div class="vegetables-star vegetables-star-8"></div>
+                        </div>
+                        <div class="vegetables-sun-effects">
+                            <div class="vegetables-sun-ray vegetables-sun-ray-1"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-2"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-3"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-4"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-5"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-6"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-7"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-8"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-9"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-10"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-11"></div>
+                            <div class="vegetables-sun-ray vegetables-sun-ray-12"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Vegetables</h3>
+                    </div>
+                </div>
+                
+                <!-- Clothes Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/144a549b773307153b5907f8b8040ce7911274eca8178274a224d17af8d93097?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(11, 'Clothes', '👕')">
+                        <div class="sparkles">
+                            <div class="sparkle sparkle-1"></div>
+                            <div class="sparkle sparkle-2"></div>
+                            <div class="sparkle sparkle-3"></div>
+                            <div class="sparkle sparkle-4"></div>
+                            <div class="sparkle sparkle-5"></div>
+                            <div class="sparkle sparkle-6"></div>
+                            <div class="sparkle sparkle-7"></div>
+                            <div class="sparkle sparkle-8"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Clothes</h3>
+                    </div>
+                </div>
+                
+                <!-- Transportation Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/b13fbf4747dc848a50cd4b879099d6adb2cb40fe5536f1649f5f0c3c391d8e3b?w=1024&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(12, 'Transportation', '🚗')">
+                        <div class="transportation-flashes">
+                            <div class="transportation-flash transportation-flash-1"></div>
+                            <div class="transportation-flash transportation-flash-2"></div>
+                            <div class="transportation-flash transportation-flash-3"></div>
+                            <div class="transportation-flash transportation-flash-4"></div>
+                            <div class="transportation-flash transportation-flash-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Transportation</h3>
+                    </div>
+                </div>
+                
+                <!-- Jobs Card -->
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[120px] sm:min-h-[140px] md:min-h-[160px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/8f8ef7dece517d0e8cbb4331899278bc90a475ef7b8dc99d3b58a9f8ff5da4c6?w=1536&h=1024'); background-size: cover; background-position: center;" 
+                         onclick="openSubPage(13, 'Jobs', '👨‍⚕️')">
+                        <div class="jobs-sparkles">
+                            <div class="jobs-sparkle jobs-sparkle-1"></div>
+                            <div class="jobs-sparkle jobs-sparkle-2"></div>
+                            <div class="jobs-sparkle jobs-sparkle-3"></div>
+                            <div class="jobs-sparkle jobs-sparkle-4"></div>
+                            <div class="jobs-sparkle jobs-sparkle-5"></div>
+                            <div class="jobs-sparkle jobs-sparkle-6"></div>
+                            <div class="jobs-sparkle jobs-sparkle-7"></div>
+                            <div class="jobs-sparkle jobs-sparkle-8"></div>
+                            <div class="jobs-sparkle jobs-sparkle-9"></div>
+                            <div class="jobs-sparkle jobs-sparkle-10"></div>
+                            <div class="jobs-sparkle jobs-sparkle-11"></div>
+                            <div class="jobs-sparkle jobs-sparkle-12"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-4 py-2 rounded-xl mt-1 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold text-white">Jobs</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sub Page -->
+    <div id="subPage" class="page-transition hidden">
+        <div class="bg-white dark:bg-gray-800 shadow-lg mb-8">
+            <div class="container mx-auto px-4 py-6">
+                <div class="relative flex items-center">
+                    <button onclick="goBack()" class="absolute left-0 flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <span class="text-2xl">🏠</span>
+                    </button>
+                    <div class="flex-1 text-center">
+                        <h2 id="subPageTitle" class="text-3xl font-bold text-white drop-shadow-lg"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="text-center card-container" onclick="openAnimalGamePage()">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-8 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[200px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/c922ddb99d48f817c4ad3e5dbbc0488f29143ffcc4681640a2b2dc6b66201fda?w=736&h=420'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                        <div class="wild-falling-stars">
+                            <div class="wild-star wild-star-1"></div>
+                            <div class="wild-star wild-star-2"></div>
+                            <div class="wild-star wild-star-3"></div>
+                            <div class="wild-star wild-star-4"></div>
+                            <div class="wild-star wild-star-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-6 py-3 rounded-xl mt-2 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">Animals name</h3>
+                    </div>
+                </div>
+                
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-8 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[200px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/6113c386e4863135aab77aeeacfc9fb2cf8323562324c689812a4db8191b5bf3?w=736&h=420'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                        <div class="wild-falling-stars">
+                            <div class="wild-star wild-star-1"></div>
+                            <div class="wild-star wild-star-2"></div>
+                            <div class="wild-star wild-star-3"></div>
+                            <div class="wild-star wild-star-4"></div>
+                            <div class="wild-star wild-star-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-6 py-3 rounded-xl mt-2 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">Story</h3>
+                    </div>
+                </div>
+                
+                <div class="text-center card-container" onclick="openVideoPage()">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-8 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[200px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/2131a862c5a49cb80cfe4dfe523990a4c1f862c38f07e3704c9140c02aefc02f?w=736&h=420'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                        <div class="wild-falling-stars">
+                            <div class="wild-star wild-star-1"></div>
+                            <div class="wild-star wild-star-2"></div>
+                            <div class="wild-star wild-star-3"></div>
+                            <div class="wild-star wild-star-4"></div>
+                            <div class="wild-star wild-star-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-6 py-3 rounded-xl mt-2 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">Song</h3>
+                    </div>
+                </div>
+                
+                <div class="text-center card-container">
+                    <div class="card-hover rounded-xl sm:rounded-2xl p-8 text-white cursor-pointer shadow-lg relative overflow-hidden min-h-[200px]" 
+                         style="background-image: url('https://pfst.cf2.poecdn.net/base/image/6548e2ae1f193fd7e586df616ea56d165618bfb16e69a9abb2f5e05932117dcd?w=735&h=412'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                        <div class="wild-falling-stars">
+                            <div class="wild-star wild-star-1"></div>
+                            <div class="wild-star wild-star-2"></div>
+                            <div class="wild-star wild-star-3"></div>
+                            <div class="wild-star wild-star-4"></div>
+                            <div class="wild-star wild-star-5"></div>
+                        </div>
+                    </div>
+                    <div class="card-label bg-transparent px-6 py-3 rounded-xl mt-2 mx-2 border-2 border-white/30 shadow-lg backdrop-blur-sm">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">Exam</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Video Page -->
+    <div id="videoPage" class="page-transition hidden">
+        <div class="bg-white dark:bg-gray-800 shadow-lg mb-8">
+            <div class="container mx-auto px-4 py-6">
+                <div class="relative flex items-center">
+                    <button onclick="goBackToSubPage()" class="absolute left-0 flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <span class="text-2xl">🏠</span>
+                    </button>
+                    <div class="flex-1 text-center">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg">
+                            Wild Animals Song
+                        </h2>
+                        <div class="flex items-center justify-center mt-2">
+                            <div class="h-1 w-8 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mx-2"></div>
+                            <span class="text-lg text-gray-600 dark:text-gray-300 font-medium">🎬</span>
+                            <div class="h-1 w-8 bg-gradient-to-r from-red-400 to-pink-400 rounded-full mx-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 pb-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="relative bg-black rounded-xl overflow-hidden shadow-2xl">
+                    <video id="songVideo" class="w-full h-auto max-h-[70vh]" controls preload="metadata" poster="">
+                        <source src="https://firebasestorage.googleapis.com/v0/b/school-29df1.firebasestorage.app/o/copy_7C86BC7E-22F2-42BC-AB8A-40B580E9F022.mov?alt=media&token=cc68b064-100c-4762-82f7-399ab02fbf47" type="video/quicktime">
+                        <source src="https://firebasestorage.googleapis.com/v0/b/school-29df1.firebasestorage.app/o/copy_7C86BC7E-22F2-42BC-AB8A-40B580E9F022.mov?alt=media&token=cc68b064-100c-4762-82f7-399ab02fbf47" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div id="videoLoading" class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                            <p class="text-lg">Loading Video...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animal Game Page -->
+    <div id="animalGamePage" class="page-transition hidden">
+        <div class="bg-white dark:bg-gray-800 shadow-lg mb-8">
+            <div class="container mx-auto px-4 py-6">
+                <div class="relative flex items-center">
+                    <button onclick="goBackToSubPageFromGame()" class="absolute left-0 flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <span class="text-2xl">🏠</span>
+                    </button>
+                    <div class="flex-1 text-center">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg">
+                            Wild Animals Game
+                        </h2>
+                        <div class="flex items-center justify-center mt-2">
+                            <div class="h-1 w-8 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mx-2"></div>
+                            <span class="text-lg text-gray-600 dark:text-gray-300 font-medium">🦁</span>
+                            <div class="h-1 w-8 bg-gradient-to-r from-red-400 to-pink-400 rounded-full mx-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 pb-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="text-center mb-6">
+                            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-3">
+                                <h3 id="animalName" class="text-3xl md:text-4xl font-bold text-white">Lion</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center mb-8">
+                            <div class="relative">
+                                <div id="animalImageContainer" class="w-80 h-80 rounded-3xl shadow-2xl overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm border-4 border-white/30" onclick="playAnimalSound()">
+                                    <img id="animalImage" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=400&fit=crop&crop=face" alt="Lion" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center space-x-6">
+                            <button id="prevAnimal" onclick="previousAnimal()" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                Previous
+                            </button>
+                            <button id="nextAnimal" onclick="nextAnimal()" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                Next
+                            </button>
+                        </div>
+                        
+                        <div class="text-center mt-6">
+                            <p id="animalCounter" class="text-lg text-white/80 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 inline-block">
+                                1 / 16
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

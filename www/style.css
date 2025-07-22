@@ -1,0 +1,969 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.page-transition {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Bubble Effects */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 15;
+    animation: bubbleFloat 3s infinite ease-in-out;
+}
+
+.bubble-1 {
+    width: 10px;
+    height: 10px;
+    left: 20%;
+    animation-delay: 0s;
+    animation-duration: 3s;
+}
+
+.bubble-2 {
+    width: 15px;
+    height: 15px;
+    left: 50%;
+    animation-delay: 0.5s;
+    animation-duration: 3.5s;
+}
+
+.bubble-3 {
+    width: 8px;
+    height: 8px;
+    left: 70%;
+    animation-delay: 1s;
+    animation-duration: 2.5s;
+}
+
+.bubble-4 {
+    width: 12px;
+    height: 12px;
+    left: 30%;
+    animation-delay: 1.5s;
+    animation-duration: 4s;
+}
+
+.bubble-5 {
+    width: 6px;
+    height: 6px;
+    left: 80%;
+    animation-delay: 2s;
+    animation-duration: 3.2s;
+}
+
+.bubble-6 {
+    width: 14px;
+    height: 14px;
+    left: 15%;
+    animation-delay: 2.5s;
+    animation-duration: 3.8s;
+}
+
+@keyframes bubbleFloat {
+    0% {
+        bottom: -20px;
+        opacity: 0;
+        transform: translateX(0px) scale(0);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(-10px) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(10px) scale(1);
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(-5px) scale(0.5);
+    }
+}
+
+.dark-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Floating Colors Effects */
+.floating-colors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.color-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: colorFloat 6s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.color-dot::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: colorShine 2s infinite ease-in-out;
+}
+
+.color-red {
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    left: 15%;
+    bottom: -20px;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.color-blue {
+    background: linear-gradient(135deg, #3742fa, #2f3542);
+    left: 30%;
+    bottom: -20px;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.color-green {
+    background: linear-gradient(135deg, #2ed573, #1e8449);
+    left: 45%;
+    bottom: -20px;
+    animation-delay: 2s;
+    animation-duration: 9s;
+}
+
+.color-yellow {
+    background: linear-gradient(135deg, #ffa502, #ff6348);
+    left: 60%;
+    bottom: -20px;
+    animation-delay: 3s;
+    animation-duration: 6s;
+}
+
+.color-purple {
+    background: linear-gradient(135deg, #a55eea, #8b46c7);
+    left: 75%;
+    bottom: -20px;
+    animation-delay: 4s;
+    animation-duration: 8.5s;
+}
+
+.color-orange {
+    background: linear-gradient(135deg, #ff7f50, #ff6b35);
+    left: 85%;
+    bottom: -20px;
+    animation-delay: 2.5s;
+    animation-duration: 7.5s;
+}
+
+.color-pink {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    left: 5%;
+    bottom: -20px;
+    animation-delay: 1.5s;
+    animation-duration: 6.5s;
+}
+
+@keyframes colorFloat {
+    0% {
+        transform: translateX(0) translateY(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-10px) translateY(-30px) scale(1);
+    }
+    25% {
+        transform: translateX(15px) translateY(-80px) scale(1.2);
+    }
+    50% {
+        transform: translateX(-8px) translateY(-130px) scale(1);
+    }
+    75% {
+        transform: translateX(12px) translateY(-180px) scale(1.1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-5px) translateY(-220px) scale(0.8);
+    }
+    100% {
+        transform: translateX(0) translateY(-250px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes colorShine {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+/* Flash Effects */
+.flashes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.flash {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.4) 60%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: cameraFlash 4s infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.flash::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 40%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: flashHalo 4s infinite;
+}
+
+.flash-1 {
+    top: 25%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.flash-2 {
+    top: 65%;
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.flash-3 {
+    top: 45%;
+    left: 40%;
+    animation-delay: 3s;
+}
+
+@keyframes cameraFlash {
+    0% { 
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    2% { 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    4% { 
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    6% { 
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes flashHalo {
+    0% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    2% { 
+        opacity: 0.8;
+        transform: scale(1.5);
+    }
+    4% { 
+        opacity: 0.4;
+        transform: scale(2);
+    }
+    6% { 
+        opacity: 0;
+        transform: scale(2.5);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Butterfly Effects */
+.butterflies {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.butterfly {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    z-index: 20;
+    animation: butterflyFly 8s linear infinite;
+}
+
+.butterfly::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    background: radial-gradient(ellipse, #ff6b9d 0%, #ffd93d  50%, #6bcf7f 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    left: 0;
+    top: 0;
+    animation: butterflyWing 0.5s ease-in-out infinite alternate;
+}
+
+.butterfly::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    background: radial-gradient(ellipse, #ff6b9d 0%, #ffd93d 50%, #6bcf7f 100%);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    animation: butterflyWing 0.5s ease-in-out infinite alternate;
+}
+
+.butterfly-1 {
+    top: 20%;
+    left: -15px;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.butterfly-2 {
+    top: 60%;
+    left: -15px;
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.butterfly-3 {
+    top: 40%;
+    left: -15px;
+    animation-duration: 10s;
+    animation-delay: 6s;
+}
+
+.butterfly-4 {
+    top: 75%;
+    left: -15px;
+    animation-duration: 14s;
+    animation-delay: 9s;
+}
+
+.butterfly-5 {
+    top: 30%;
+    left: -15px;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+@keyframes butterflyFly {
+    0% { 
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(60px) translateY(-10px) rotate(15deg);
+    }
+    50% {
+        transform: translateX(120px) translateY(10px) rotate(-10deg);
+    }
+    75% {
+        transform: translateX(180px) translateY(-5px) rotate(20deg);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        transform: translateX(220px) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes butterflyWing {
+    0% { transform: rotate(-45deg) scaleX(1); }
+    100% { transform: rotate(-45deg) scaleX(0.7); }
+}
+
+/* Sparkle Effects */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.6);
+    animation: sparkleMove 3s linear infinite;
+}
+
+.sparkle-1 {
+    top: 20%;
+    left: 15%;
+    animation-duration: 2.5s;
+    animation-delay: 0s;
+}
+
+.sparkle-2 {
+    top: 40%;
+    left: 70%;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+    top: 60%;
+    left: 30%;
+    animation-duration: 3.5s;
+    animation-delay: 1s;
+}
+
+.sparkle-4 {
+    top: 80%;
+    left: 80%;
+    animation-duration: 2.8s;
+    animation-delay: 1.5s;
+}
+
+.sparkle-5 {
+    top: 25%;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.sparkle-6 {
+    top: 75%;
+    left: 60%;
+    animation-duration: 3.2s;
+    animation-delay: 2.5s;
+}
+
+.sparkle-7 {
+    top: 35%;
+    left: 20%;
+    animation-duration: 2.7s;
+    animation-delay: 3s;
+}
+
+.sparkle-8 {
+    top: 55%;
+    left: 85%;
+    animation-duration: 3.8s;
+    animation-delay: 3.5s;
+}
+
+@keyframes sparkleMove {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    15% {
+        opacity: 1;
+        transform: scale(1) rotate(90deg);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1.2) rotate(270deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+    }
+}
+
+/* Wind Effects */
+.wind-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.wind-line {
+    position: absolute;
+    background: linear-gradient(135deg, 
+        transparent 0%, 
+        rgba(255, 193, 7, 0.4) 20%, 
+        rgba(255, 235, 59, 0.7) 50%, 
+        rgba(255, 193, 7, 0.4) 80%, 
+        transparent 100%);
+    border-radius: 1px;
+    opacity: 0;
+    animation: sunRayFlow 6s infinite ease-in-out;
+    transform-origin: top left;
+}
+
+.wind-line-1 {
+    width: 60px;
+    height: 3px;
+    top: -10%;
+    left: 10%;
+    transform: rotate(45deg);
+    animation-delay: 0s;
+    animation-duration: 7s;
+}
+
+.wind-line-2 {
+    width: 45px;
+    height: 2px;
+    top: -5%;
+    left: 25%;
+    transform: rotate(50deg);
+    animation-delay: 1.5s;
+    animation-duration: 6s;
+}
+
+.wind-line-3 {
+    width: 70px;
+    height: 3px;
+    top: -8%;
+    left: 40%;
+    transform: rotate(40deg);
+    animation-delay: 3s;
+    animation-duration: 8s;
+}
+
+.wind-line-4 {
+    width: 35px;
+    height: 2px;
+    top: -12%;
+    left: 60%;
+    transform: rotate(55deg);
+    animation-delay: 0.8s;
+    animation-duration: 5.5s;
+}
+
+.wind-line-5 {
+    width: 55px;
+    height: 3px;
+    top: -6%;
+    left: 75%;
+    transform: rotate(45deg);
+    animation-delay: 2.2s;
+    animation-duration: 7.5s;
+}
+
+.wind-line-6 {
+    width: 40px;
+    height: 2px;
+    top: -15%;
+    left: 90%;
+    transform: rotate(50deg);
+    animation-delay: 4s;
+    animation-duration: 6.5s;
+}
+
+@keyframes sunRayFlow {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) rotate(var(--rotation, 45deg)) scale(0.5);
+    }
+    15% {
+        opacity: 0.6;
+        transform: translateX(15px) translateY(20px) rotate(var(--rotation, 45deg)) scale(1);
+    }
+    35% {
+        opacity: 0.9;
+        transform: translateX(35px) translateY(45px) rotate(var(--rotation, 45deg)) scale(1.2);
+    }
+    55% {
+        opacity: 1;
+        transform: translateX(60px) translateY(75px) rotate(var(--rotation, 45deg)) scale(1);
+    }
+    75% {
+        opacity: 0.8;
+        transform: translateX(85px) translateY(105px) rotate(var(--rotation, 45deg)) scale(1.1);
+    }
+    90% {
+        opacity: 0.4;
+        transform: translateX(110px) translateY(135px) rotate(var(--rotation, 45deg)) scale(0.9);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(130px) translateY(160px) rotate(var(--rotation, 45deg)) scale(0.5);
+    }
+}
+
+/* Continued CSS for remaining effects... */
+/* (Due to length limits, I'll provide the rest in parts) */
+
+/* Wild Sun Effects */
+.wild-sun-effects {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.wild-sun-ray {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform-origin: 12.5px 12.5px;
+    opacity: 0;
+    animation: wildSunRayRotate 8s infinite linear;
+}
+
+.wild-sun-ray::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(255, 223, 0, 0.8) 0%, 
+        rgba(255, 193, 7, 0.6) 50%, 
+        transparent 100%);
+    border-radius: 1px;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+
+.wild-sun-ray-1 { transform: rotate(0deg); animation-delay: 0s; }
+.wild-sun-ray-2 { transform: rotate(45deg); animation-delay: 0.5s; }
+.wild-sun-ray-3 { transform: rotate(90deg); animation-delay: 1s; }
+.wild-sun-ray-4 { transform: rotate(135deg); animation-delay: 1.5s; }
+.wild-sun-ray-5 { transform: rotate(180deg); animation-delay: 2s; }
+.wild-sun-ray-6 { transform: rotate(225deg); animation-delay: 2.5s; }
+.wild-sun-ray-7 { transform: rotate(270deg); animation-delay: 3s; }
+.wild-sun-ray-8 { transform: rotate(315deg); animation-delay: 3.5s; }
+
+@keyframes wildSunRayRotate {
+    0% { opacity: 0; transform: rotate(var(--rotation, 0deg)) scale(0.8); }
+    25% { opacity: 0.8; transform: rotate(var(--rotation, 0deg)) scale(1.2); }
+    50% { opacity: 1; transform: rotate(var(--rotation, 0deg)) scale(1); }
+    75% { opacity: 0.8; transform: rotate(var(--rotation, 0deg)) scale(1.1); }
+    100% { opacity: 0; transform: rotate(var(--rotation, 0deg)) scale(0.8); }
+}
+
+/* Rain Effects */
+.rain-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.rain-drop {
+    position: absolute;
+    background: linear-gradient(180deg, 
+        rgba(173, 216, 230, 0.8) 0%, 
+        rgba(135, 206, 235, 0.9) 40%, 
+        rgba(100, 149, 237, 0.7) 70%, 
+        rgba(70, 130, 180, 0.5) 100%);
+    border-radius: 0 50% 50% 50%;
+    opacity: 0;
+    animation: rainFall 3s infinite linear;
+    transform: rotate(45deg);
+}
+
+.rain-drop-1 { width: 3px; height: 12px; left: 15%; top: -15px; animation-delay: 0s; animation-duration: 2.5s; }
+.rain-drop-2 { width: 4px; height: 15px; left: 30%; top: -18px; animation-delay: 0.5s; animation-duration: 3s; }
+.rain-drop-3 { width: 2px; height: 10px; left: 45%; top: -12px; animation-delay: 1s; animation-duration: 2.8s; }
+.rain-drop-4 { width: 3px; height: 13px; left: 60%; top: -16px; animation-delay: 1.5s; animation-duration: 2.7s; }
+.rain-drop-5 { width: 4px; height: 16px; left: 75%; top: -20px; animation-delay: 2s; animation-duration: 3.2s; }
+.rain-drop-6 { width: 2px; height: 9px; left: 85%; top: -11px; animation-delay: 0.3s; animation-duration: 2.4s; }
+.rain-drop-7 { width: 3px; height: 11px; left: 25%; top: -14px; animation-delay: 0.8s; animation-duration: 2.9s; }
+.rain-drop-8 { width: 4px; height: 14px; left: 55%; top: -17px; animation-delay: 1.2s; animation-duration: 2.6s; }
+.rain-drop-9 { width: 2px; height: 8px; left: 10%; top: -10px; animation-delay: 1.8s; animation-duration: 3.1s; }
+.rain-drop-10 { width: 3px; height: 12px; left: 70%; top: -15px; animation-delay: 0.7s; animation-duration: 2.3s; }
+
+@keyframes rainFall {
+    0% { opacity: 0; transform: translateY(0) rotate(45deg) scale(0.5); }
+    10% { opacity: 1; transform: translateY(20px) rotate(45deg) scale(1); }
+    90% { opacity: 0.8; transform: translateY(180px) rotate(45deg) scale(1); }
+    100% { opacity: 0; transform: translateY(200px) rotate(45deg) scale(0.3); }
+}
+
+/* Continue with additional effects... */
+/* Card Labels */
+.card-label {
+    position: relative;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card-label::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.8;
+}
+
+.card-label:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-container:hover .card-label {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Wild Falling Stars */
+.wild-falling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.wild-star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: wildStarFall 5s linear infinite;
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.wild-star::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 215, 0, 0.3) 50%, transparent 70%);
+    border-radius: 50%;
+    animation: wildStarGlow 3s ease-in-out infinite alternate;
+}
+
+/* Star positioning classes */
+.wild-star-1 { left: 10%; top: -10px; animation-delay: 0s; animation-duration: 4.5s; }
+.wild-star-2 { left: 25%; top: -12px; animation-delay: 1.2s; animation-duration: 5.2s; }
+.wild-star-3 { left: 40%; top: -8px; animation-delay: 2.1s; animation-duration: 4.8s; }
+.wild-star-4 { left: 55%; top: -15px; animation-delay: 0.7s; animation-duration: 5.5s; }
+.wild-star-5 { left: 70%; top: -6px; animation-delay: 1.8s; animation-duration: 4.2s; }
+.wild-star-6 { left: 85%; top: -11px; animation-delay: 2.8s; animation-duration: 5.1s; }
+.wild-star-7 { left: 15%; top: -9px; animation-delay: 3.5s; animation-duration: 4.7s; }
+.wild-star-8 { left: 35%; top: -14px; animation-delay: 0.3s; animation-duration: 5.3s; }
+.wild-star-9 { left: 60%; top: -7px; animation-delay: 1.6s; animation-duration: 4.9s; }
+.wild-star-10 { left: 80%; top: -13px; animation-delay: 2.4s; animation-duration: 4.4s; }
+
+@keyframes wildStarFall {
+    0% { opacity: 0; transform: translateY(0) translateX(0) rotate(0deg) scale(0.5); }
+    10% { opacity: 1; transform: translateY(20px) translateX(5px) rotate(45deg) scale(1); }
+    20% { opacity: 1; transform: translateY(50px) translateX(-3px) rotate(90deg) scale(1.1); }
+    40% { opacity: 1; transform: translateY(100px) translateX(8px) rotate(180deg) scale(1); }
+    60% { opacity: 0.9; transform: translateY(150px) translateX(-5px) rotate(270deg) scale(1.2); }
+    80% { opacity: 0.7; transform: translateY(200px) translateX(10px) rotate(315deg) scale(0.9); }
+    95% { opacity: 0.3; transform: translateY(240px) translateX(-2px) rotate(360deg) scale(0.7); }
+    100% { opacity: 0; transform: translateY(260px) translateX(0px) rotate(405deg) scale(0.3); }
+}
+
+@keyframes wildStarGlow {
+    0% { opacity: 0.4; transform: scale(0.8); }
+    100% { opacity: 0.9; transform: scale(1.3); }
+}
+
+/* Additional star effects for vegetables and fruits */
+.vegetables-falling-stars, .fruits-falling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.vegetables-star, .fruits-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: vegetablesStarFall 4.5s linear infinite;
+    box-shadow: 0 0 3px rgba(255, 215, 0, 0.7), 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+/* Similar keyframes for vegetables and fruits stars... */
+
+/* Shapes Effects */
+.shapes-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.shape-square {
+    position: absolute;
+    opacity: 0;
+    animation: shapeFloat 6s infinite ease-in-out;
+}
+
+.square-1 { width: 15px; height: 15px; background: linear-gradient(135deg, #ff6b9d, #c44569); left: 20%; bottom: -20px; animation-delay: 0s; animation-duration: 7s; }
+.square-2 { width: 12px; height: 12px; background: linear-gradient(135deg, #4fc3f7, #2980b9); left: 40%; bottom: -15px; animation-delay: 1.5s; animation-duration: 6s; }
+.square-3 { width: 18px; height: 18px; background: linear-gradient(135deg, #66bb6a, #2e7d32); left: 60%; bottom: -25px; animation-delay: 3s; animation-duration: 8s; }
+.square-4 { width: 10px; height: 10px; background: linear-gradient(135deg, #ffeb3b, #f57c00); left: 80%; bottom: -12px; animation-delay: 4.5s; animation-duration: 5.5s; }
+.square-5 { width: 14px; height: 14px; background: linear-gradient(135deg, #9c27b0, #6a1b9a); left: 10%; bottom: -18px; animation-delay: 2s; animation-duration: 6.5s; }
+
+.shape-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    animation: triangleFloat 7s infinite ease-in-out;
+}
+
+.triangle-1 { border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid #ff5722; left: 25%; bottom: -20px; animation-delay: 0.5s; animation-duration: 7.5s; }
+.triangle-2 { border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 10px solid #2196f3; left: 45%; bottom: -15px; animation-delay: 2.5s; animation-duration: 6.5s; }
+.triangle-3 { border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 17px solid #4caf50; left: 65%; bottom: -25px; animation-delay: 4s; animation-duration: 8.5s; }
+
+@keyframes shapeFloat {
+    0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.3); }
+    15% { opacity: 1; transform: translateY(-30px) rotate(45deg) scale(1); }
+    30% { opacity: 1; transform: translateY(-60px) rotate(90deg) scale(1.2); }
+    50% { opacity: 1; transform: translateY(-100px) rotate(180deg) scale(1); }
+    70% { opacity: 1; transform: translateY(-140px) rotate(270deg) scale(1.1); }
+    85% { opacity: 0.8; transform: translateY(-180px) rotate(315deg) scale(0.9); }
+    100% { opacity: 0; transform: translateY(-220px) rotate(360deg) scale(0.2); }
+}
+
+/* Transportation Flashes */
+.transportation-flashes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.transportation-flash {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.5) 55%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: transportationCameraFlash 5s infinite;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.7), 0 0 36px rgba(255, 255, 255, 0.5);
+}
+
+/* Jobs Sparkles */
+.jobs-sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.jobs-sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.7), 0 0 24px rgba(255, 255, 255, 0.5);
+    animation: jobsSparkleMove 4s linear infinite;
+}
+
+/* Additional positioning and animation classes for all effects... */
