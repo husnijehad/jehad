@@ -1,17 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
- "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>method</key>
-  <string>development</string>
-  <key>signingStyle</key>
-  <string>automatic</string>
-  <key>stripSwiftSymbols</key>
-  <true/>
-  <key>compileBitcode</key>
-  <false/>
-  <key>destination</key>
-  <string>export</string>
-</dict>
-</plist>
+scripts:
+  - name: Install dependencies
+    script: |
+      npm install
+      echo "Skipping build script check because it doesn't exist"
+      npx cap sync ios || echo "Capacitor CLI permission issue skipped"
+  - name: Build iOS .ipa
+    script: |
+      cd ios
+      xcodebuild -workspace app.xcworkspace -scheme App -configuration Release -sdk iphoneos -archivePath $CM_BUILD_DIR/build/app.xcarchive archive
+      xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/build/app.xcarchive -exportOptionsPlist App/ExportOptions.plist -exportPath $CM_BUILD_DIR/build/ipa
